@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import yaml
 
 with open('/content/Raccoon-38/data.yaml', 'r') as f:
@@ -14,4 +15,22 @@ with open('/content/Raccoon-38/data.yaml', 'w') as f:
 print(data)
 %cd /content/yolov5/
 
+=======
+import yaml
+
+with open('/content/Raccoon-38/data.yaml', 'r') as f:
+  data = yaml.full_load(f)
+
+print(data)
+
+data['train'] = '/content/Raccoon-38/train.txt'
+data['val'] = '/content/Raccoon-38/val.txt'
+
+with open('/content/Raccoon-38/data.yaml', 'w') as f:
+  yaml.dump(data, f)
+
+print(data)
+%cd /content/yolov5/
+
+>>>>>>> d5492527c6fafe6b7c143441914706095b1dac30
 !python train.py --img 416 --batch 16 --epochs 50 --data /content/Raccoon-38/data.yaml --cfg ./models/yolov5s.yaml --weights yolov5s.pt --name Raccoon_yolov5s_results

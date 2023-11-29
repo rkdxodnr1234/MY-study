@@ -1,0 +1,5 @@
+!git clone https://github.com/ultralytics/yolov5
+%cd yolov5
+%pip install -qr requirements.txt
+!python train.py --data "data/custom_dataset.yaml" --epochs 100 #epoch 100회
+!python train.py --data data/custom_dataset.yaml --hyp data/hyps/hyp.scratch-low.yaml --epochs 100
